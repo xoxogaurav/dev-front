@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installation Guide - AI Image Generation Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        h1, h2 {
+            color: #0073e6;
+        }
+        h1 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        p {
+            margin: 1rem 0;
+        }
+        ol {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+        code {
+            background-color: #f4f4f9;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        .note {
+            background-color: #eaf2ff;
+            border-left: 4px solid #0073e6;
+            padding: 10px;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Installation Guide</h1>
+    <p>Welcome to the AI Image Generation website! This guide will walk you through the process of deploying the React application from the <code>dist</code> folder to your online hosting platform.</p>
+
+    <h2>Prerequisites</h2>
+    <ul>
+        <li>Access to an online hosting provider with file upload capabilities (e.g., cPanel, FTP, or SSH access).</li>
+        <li>A domain name (optional, but recommended).</li>
+        <li>Basic knowledge of file uploads and hosting platform usage.</li>
+    </ul>
+
+    <h2>Step-by-Step Installation</h2>
+
+    <h3>1. Prepare Your Files</h3>
+    <p>The build process has generated a folder named <code>dist</code> containing all the necessary files for deployment.</p>
+    <ol>
+        <li>Ensure that all files in the <code>dist</code> folder are intact. These are the optimized files for your website.</li>
+        <li>If the <code>dist</code> folder is located inside a larger project directory, navigate to this folder and make it ready for upload.</li>
+    </ol>
+
+    <h3>2. Connect to Your Hosting Account</h3>
+    <p>You’ll need to log into your hosting provider to upload the files. You can do this through:</p>
+    <ul>
+        <li>cPanel File Manager (common for shared hosting)</li>
+        <li>FTP Client (e.g., FileZilla) with your hosting credentials</li>
+        <li>SSH (if your hosting provider supports it)</li>
+    </ul>
+
+    <h3>3. Upload the <code>dist</code> Folder Contents</h3>
+    <ol>
+        <li>Navigate to the root directory of your website (often named <code>public_html</code> or <code>www</code>).</li>
+        <li>Upload the <strong>contents</strong> of the <code>dist</code> folder (do not upload the folder itself, only the files within it) to the root directory.</li>
+        <li>Once the files are uploaded, ensure that <code>index.html</code> is in the root directory, as this file serves as the entry point for your React app.</li>
+    </ol>
+
+    <h3>4. Configure Hosting Settings (if needed)</h3>
+    <p>Some hosting services require a few additional configurations:</p>
+    <ul>
+        <li>If there’s an <code>.htaccess</code> file in the <code>dist</code> folder, upload it to the root directory as well. This file helps with routing in single-page applications like React.</li>
+        <li>If you encounter <strong>404 errors</strong> on page refresh, add the following code to your <code>.htaccess</code> file to ensure all routes redirect to <code>index.html</code>:</li>
+    </ul>
+    <pre><code>RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.html [L]</code></pre>
+
+    <h3>5. Test Your Application</h3>
+    <ol>
+        <li>Visit your domain to verify that the application is running as expected.</li>
+        <li>Test the image generation feature to ensure the AI model is loading and generating images correctly.</li>
+    </ol>
+
+    <div class="note">
+        <strong>Note:</strong> If your website requires an API key or environment variables, make sure to configure them as instructed. You may need to set these in the hosting dashboard or use a configuration file.
+    </div>
+
+    <h2>Troubleshooting</h2>
+    <ul>
+        <li>If your site is not loading correctly, check the <code>Console</code> tab in your browser’s Developer Tools to identify any errors.</li>
+        <li>If you see a blank page, ensure all assets and files (JavaScript, CSS, images) are correctly uploaded.</li>
+    </ul>
+
+    <p>Thank you for choosing our AI Image Generation website! For additional support, please refer to the documentation or contact our support team at gvsaini777@gmail.com </p>
+
+</body>
+</html>
